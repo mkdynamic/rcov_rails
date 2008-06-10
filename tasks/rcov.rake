@@ -16,7 +16,7 @@ def run_coverage(files)
     exclude = '--exclude "rubygems/*"'
   end
   
-  rcov = "rcov --rails -Ilib --sort coverage --text-report #{exclude} --no-validator-links"
+  rcov = "rcov --rails -Ilib:test --sort coverage --text-report #{exclude} --no-validator-links"
   puts
   puts
   puts "Running tests..."
