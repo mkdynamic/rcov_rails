@@ -2,8 +2,8 @@ def run_coverage(files)
   rm_f "coverage"
   rm_f "coverage.data"
   
-  # turn the files we want to run into a  string
-  if files.length == 0
+  # turn the files we want to run into a string
+  if files.empty?
     puts "No files were specified for testing"
     return
   end
