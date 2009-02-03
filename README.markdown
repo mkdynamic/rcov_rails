@@ -1,12 +1,12 @@
 rcov_plugin
 ===========
 
-This is a simple task plugin for rails that adds some useful rcov tasks. The tasks and their descriptions are:
+This is a simple rails plugin that adds some useful rcov tasks.
 
-rake test:coverage                # Tests coverage on the entire application
-rake test:coverage:units          # Tests coverage for unit tests
-rake test:coverage:functionals    # Tests coverage for functional tests
-rake test:coverage:integration    # Tests coverage for integration tests
+    rake test:coverage                # Tests coverage on the entire application
+    rake test:coverage:units          # Tests coverage for unit tests
+    rake test:coverage:functionals    # Tests coverage for functional tests
+    rake test:coverage:integration    # Tests coverage for integration tests
 
 The task ends up creating a coverage folder with an html coverage report in it.
 
