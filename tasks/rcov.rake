@@ -29,7 +29,7 @@ namespace :test do
   
   desc "Measures unit, functional, and integration test coverage"
   task :coverage do
-    run_coverage Dir["test/**/*.rb"]
+    run_coverage Dir["test/unit/**/*.rb", "test/functional/**/*.rb", "test/integration/**/*.rb"]
   end
   
   namespace :coverage do
