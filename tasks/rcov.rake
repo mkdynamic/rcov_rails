@@ -15,6 +15,29 @@ def run_coverage(files)
   else
     exclude = '--exclude "rubygems/*"'
   end
+  # rake test:units:rcov SHOW_ONLY=models,controllers,lib,helpers
+  # rake test:units:rcov SHOW_ONLY=m,c,l,h
+  if ENV['SHOW_ONLY']
+    params = String.new
+    show_only = ENV['SHOW_ONLY'].to_s.split(',').map{|x|x.strip}
+    if show_only.any?
+      reg_exp = []
+      for show_type in show_only
+        reg_exp << case show_type
+        when 'm', 'models' : 'app\/models'
+        when 'c', 'controllers' : 'app\/controllers'
+        when 'h', 'helpers' : 'app\/helpers'
+        when 'l', 'lib' : 'lib'
+        else
+          show_type
+        end
+      end
+      reg_exp.map!{ |m| "(#{m})" }
+      params << " --exclude \"^(?!#{reg_exp.join('|')})\""
+    end
+    exclude = exclude + params
+  end
+
   
   rcov = "rcov --rails -Ilib:test --sort coverage --text-report #{exclude} --no-validator-links"
   puts

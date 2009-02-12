@@ -10,6 +10,21 @@ This is a simple rails plugin that adds some useful rcov tasks.
 
 The task ends up creating a coverage folder with an html coverage report in it.
 
+SHOW_ONLY is a comma-separated list of the files you'd like to see (although
+you can only run functionals, you still see all the models and helpers which 
+are 'touched'). Right now there are four types of files rake test:coverage 
+recognizes: models, helpers, controllers, and lib. These can be abbreviated 
+to their first letters:
+
+  # only show files from app/models
+  rake test:coverage SHOW_ONLY=models
+  
+  # only show files from app/helpers and app/controllers
+  rake test:coverage SHOW_ONLY=helpers,controllers
+  
+  # only show files from app/helpers and app/controllers, with less typing
+  rake test:coverage SHOW_ONLY=h,c
+
 Requirements
 ============
 
