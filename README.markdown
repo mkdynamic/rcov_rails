@@ -16,9 +16,9 @@ are 'touched'). Right now there are four types of files rake test:coverage
 recognizes: models, helpers, controllers, and lib. These can be abbreviated 
 to their first letters:
 
-  rake test:coverage SHOW_ONLY=models
-  rake test:coverage SHOW_ONLY=helpers,controllers
-  rake test:coverage SHOW_ONLY=h,c
+    rake test:coverage SHOW_ONLY=models
+    rake test:coverage SHOW_ONLY=helpers,controllers
+    rake test:coverage SHOW_ONLY=h,c
 
 Requirements
 ============
