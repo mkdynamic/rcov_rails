@@ -15,6 +15,10 @@ def run_coverage(files)
   else
     exclude = '--exclude "rubygems/*"'
   end
+
+  # exclude migrations
+  exclude << ' --exclude "db/migrate/*"'
+  
   # rake test:units:rcov SHOW_ONLY=models,controllers,lib,helpers
   # rake test:units:rcov SHOW_ONLY=m,c,l,h
   if ENV['SHOW_ONLY']
