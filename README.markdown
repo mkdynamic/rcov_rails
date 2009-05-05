@@ -20,6 +20,9 @@ to their first letters:
     rake test:coverage SHOW_ONLY=helpers,controllers
     rake test:coverage SHOW_ONLY=h,c
 
+If using JRuby, remember to run rake with it, like this:
+    jruby -S rake test:coverage
+
 Requirements
 ============
 
