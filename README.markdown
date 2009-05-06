@@ -20,13 +20,28 @@ to their first letters:
     rake test:coverage SHOW_ONLY=helpers,controllers
     rake test:coverage SHOW_ONLY=h,c
 
+JRuby Support
+=============
+rcov_plugin works great with JRuby.
+
 If using JRuby, remember to run rake with it, like this:
     jruby -S rake test:coverage
+
+Special thanks go to Leonard Borges (http://www.leonardoborges.com) for getting the plugin working with JRuby.
 
 Requirements
 ============
 
 This task requires that you have rcov installed and on your path.
+
+Contributors
+============
+Special thanks go to all of the contributors to this plugin:
+
+* leonardoborges
+* dovadi
+* baldowl
+* archfear
 
 License
 =======
