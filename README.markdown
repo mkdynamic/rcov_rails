@@ -27,7 +27,7 @@ rcov_plugin works great with JRuby.
 If using JRuby, remember to run rake with it, like this:
     jruby -S rake test:coverage
 
-Special thanks go to Leonard Borges (http://www.leonardoborges.com) for getting the plugin working with JRuby.
+Special thanks go to Leonard Borges ([http://www.leonardoborges.com](http://www.leonardoborges.com)) for getting the plugin working with JRuby.
 
 Requirements
 ============
