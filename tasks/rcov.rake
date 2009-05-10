@@ -9,9 +9,11 @@ def run_coverage(files)
   end
   
   files = files.join(" ")
-  
+
   if PLATFORM =~ /darwin/
     exclude = '--exclude "gems/*" --exclude "Library/Frameworks/*"'
+  elsif PLATFORM =~ /java/
+    exclude = '--exclude "rubygems/*,jruby/*,parser*,gemspec*,_DELEGATION*,eval*,recognize_optimized*,yaml,yaml/*,fcntl"'
   else
     exclude = '--exclude "rubygems/*"'
   end
@@ -42,8 +44,8 @@ def run_coverage(files)
     exclude = exclude + params
   end
 
-  
-  rcov = "rcov --rails -Ilib:test --sort coverage --text-report #{exclude} --no-validator-links"
+  rcov_bin = PLATFORM =~ /java/ ? "jruby -S rcov" : "rcov"
+  rcov = "#{rcov_bin} --rails -Ilib:test --sort coverage --text-report #{exclude} --no-validator-links"
   puts
   puts
   puts "Running tests..."
@@ -76,3 +78,4 @@ namespace :test do
     end
   end
 end
+
